@@ -3,9 +3,6 @@ Resources:
   TheBucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: my-sample-S3bucket
-Outputs:
-  BucketDomain:
-    Description: "The domain name of the S3 bucket"
-    Value: !GetAtt TheBucket.DomainName
+      BucketName: bucket12823-sample 
+      AccessControl: Private
     
