@@ -1,0 +1,48 @@
+arrayA = [1,5,4,3,1]
+arrayB = [4,3,7,2,2]
+
+def portal(iA,iB,arrayA,arrayB):
+    if iB > len(arrayA):
+        iB = iB - len(arrayA)
+    if iA > len(arrayB):
+        iA = iA - len(arrayB)
+    return iA,iB    
+
+iA = 0
+iB = None
+in_arrayA = True
+max_value = float('inf')
+
+def Rabbit(arrayA, arrayB):
+    iA = 0
+    iB = 0
+    in_arrayA = True
+    max_value = float('-inf')
+    while True:
+        if in_arrayA:
+            
+            print("Hop!")
+            iA,iB = portal(iA,iB,arrayA,arrayB)
+            print ( "IndexA-",iA," Index B-",iB)
+            print("ValueA-",arrayA[iA]," Value B-",arrayB[iB])
+            iB = arrayA[iA]
+            if arrayB[iB] > max_value:
+                    max_value = arrayB[iB]
+                    
+        else:
+            print("Hop!")
+            iA,iB = portal(iA,iB,arrayA,arrayB)
+            print ( "IndexA-",iA," Index B-",iB)
+            print("ValueA-",arrayA[iA]," Value B-",arrayB[iB])
+            iA= arrayB[iB]
+            if iA == 0:
+                return max_value
+                print (max_value)
+        in_arrayA = not in_arrayA
+
+
+Rabbit(arrayA, arrayB)
+
+
+
+
